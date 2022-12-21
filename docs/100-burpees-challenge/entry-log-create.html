@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <title>100 Burpees Challenge</title>
+    <link rel="stylesheet" href="//unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="//unpkg.com/alpinejs@3.10.5/dist/cdn.min.js" defer></script>
+    <script src="index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+    <main class="container-fluid" x-data="entryLogCreate">
+      <h1><a @click="history.back()"><</a>
+        <Add>Log Entry</Add>
+      </h1>
+      <form @submit.prevent="submit()">
+        <label for="burpees">Burpees count
+          <input type="number" name="burpees" placeholder="burpees count" required="" x-model="log.count" :aria-invalid="errors.count">
+        </label>
+        <label for="date">Date
+          <input type="date" name="date" x-model="log.isoDate" :aria-invalid="errors.date">
+        </label>
+        <label for="time">Time
+          <input type="time" name="time" x-model="log.shortIsoTime" :aria-invalid="errors.time">
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>

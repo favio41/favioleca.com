@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.umd.min.js" defer></script>
+  <head>
+    <meta charset="UTF-8">
+    <title>100 Burpees Challenge</title>
+    <link rel="stylesheet" href="//unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="//unpkg.com/alpinejs@3.10.5/dist/cdn.min.js" defer></script>
+    <script src="index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body id="dashboard">
+    <main class="container-fluid" x-data="dashboard" x-init="startGraph()">
+      <h1 class="center" @click="debugModeCount++">100 burpees challenge</h1>
+      <div x-show="hasChallengeFinished()">
+        <h4 class="center">Challenge has ended.</h4>
+        <h5 class="center">Some stats for you:</h5>
+        <div x-data="{stats: analytics.totalStats()}">
+          <section>
+            <div class="double-column">
+              <div class="right"><strong>Expected burpees:</strong></div>
+              <div><strong x-text="stats.totalExpected"></strong></div>
+            </div>
+            <div class="double-column">
+              <div class="right"><strong>You did:</strong></div>
+              <div><strong x-text="stats.totalBurpees"> </strong><strong x-text="` (${stats.percentageDone}%)`"></strong></div>
+            </div>
+          </section>
+          <section class="center">
+            <div>
+              <div x-show="stats.level === 'SUPER'">
+                <h1>Amazing!</h1>
+              </div>
+              <div x-show="stats.level === 'NOT_BAD'">
+                <h1>Well done!</h1>
+              </div>
+              <div x-show="stats.level === 'COUCH'">
+                <h1>Better than a couch potato!</h1>
+              </div>
+              <div x-show="stats.level === 'GAME_OVER'">
+                <h1>You always have next year!</h1>
+              </div>
+            </div>
+            <section><span class="massive" x-html="getStatsIcon(stats.level)"></span></section>
+          </section>
+        </div>
+      </div>
+      <div x-show="isChallengePendingToStart()">
+        <h4 class="center">Come back 1th of January!</h4>
+      </div>
+      <div x-show="isChallengeActive()">
+        <section>
+          <canvas id="myChart"></canvas>
+        </section>
+        <div class="double-column center">
+          <div>
+            <hgroup>
+              <h4>Today</h4>
+              <h5>you did:</h5>
+            </hgroup>
+            <h1 x-text="analytics.todayStats().sumCount"></h1>
+          </div>
+          <div x-show="analytics.todayStats().expectedBurpees &gt; 0">
+            <hgroup>
+              <h4>You are</h4>
+              <h5>behind by:</h5>
+            </hgroup>
+            <h1 x-text="analytics.todayStats().expectedBurpees"></h1>
+          </div>
+          <div x-show="analytics.todayStats().expectedBurpees &lt; 0">
+            <hgroup>
+              <h4>Surplus of:</h4>
+              <h5 x-text="analytics.todayStats().expectedBurpees * -1"></h5>
+            </hgroup>
+            <h1 x-html="todaySuccessEmoticon()"></h1>
+          </div>
+          <div x-show="analytics.todayStats().expectedBurpees === 0">
+            <hgroup>
+              <h4>All Catch-up</h4>
+              <h5>well done!</h5>
+            </hgroup>
+            <h1 x-html="todaySuccessEmoticon()"></h1>
+          </div>
+        </div>
+        <section>
+          <div class="double-column">
+            <div>
+              <button @click="addEntryLogCount(10)" href="#">Add + 10 burpees</button>
+              <button @click="addEntryLogCount(25)" href="#">Add + 25 burpees</button>
+            </div>
+            <div>
+              <button @click="addEntryLogCount(15)" href="#">Add + 15 burpees</button>
+              <button @click="addEntryLogCount(30)" href="#">Add + 30 burpees</button>
+            </div>
+          </div>
+          <button class="secondary" @click="window.location = 'entry-log-create.html'">Add a custom entry </button>
+          <button class="secondary" @click="window.location = 'entry-logs.html'">See all entries</button>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
