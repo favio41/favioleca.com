@@ -1,0 +1,21 @@
+{
+  "name": "favioleca.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "esbuild": "0.16.6",
+    "gh-pages": "^4.0.0",
+    "http-server": "^14.1.1",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "pug-cli": "^1.0.0-alpha6"
+  },
+  "workspaces": [
+    "apps/100-burpees-challenge"
+  ]
+}

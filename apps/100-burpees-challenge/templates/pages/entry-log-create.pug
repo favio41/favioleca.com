@@ -1,0 +1,20 @@
+doctype html
+html(lang="en" data-theme="dark")
+  include ../head.pug
+  body
+    main(class="container-fluid" x-data="entryLogCreate")
+      h1
+        a(@click="history.back()") <
+        Add Log Entry
+      form(@submit.prevent="submit()")
+        label(for='burpees')
+          | Burpees count
+          input(type='number' name='burpees' placeholder='burpees count' required='' x-model="log.count" :aria-invalid="errors.count")
+        label(for='date')
+          | Date
+          input(type='date' name='date' x-model="log.isoDate" :aria-invalid="errors.date")
+        label(for='time')
+          | Time
+          input(type='time' name='time' x-model="log.shortIsoTime" :aria-invalid="errors.time")
+
+        button(type='submit') Submit

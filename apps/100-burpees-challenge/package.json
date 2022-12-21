@@ -1,0 +1,19 @@
+{
+  "name": "@favio41/100-burpees-challenge",
+  "version": "1.0.0",
+  "description": "100 burpees challenge",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Favio Leca",
+  "license": "UNLICENSED",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "esbuild": "0.16.6"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}
