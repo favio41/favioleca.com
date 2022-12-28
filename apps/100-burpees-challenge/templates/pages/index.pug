@@ -1,7 +1,10 @@
 doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    script.
-      window.location.replace('dashboard.html');
-  body 
+html(lang="en" data-theme="dark")
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.umd.min.js" defer></script>
+  include ../head.pug
+  body#dashboard
+    main(class="container-fluid")
+      h1.center 100 burpees challenge
+      div.center
+        a(href="https://f3maba.com/" rel="nofollow") Please use f3maba.com instead
+        
