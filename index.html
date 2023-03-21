@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <div class="svg-container" x-data="{ dur: $persist(5) }">
+    <div class="svg-container" x-data="{ dur: $persist(5), step: 0.4 }">
       <center>
         <h3>Breathe In And Out</h3>
         <svg xmlns="https://www.w3.org/2000/svg" viewbox="0 0 50 50">
@@ -28,15 +28,10 @@
             />
           </circle>
         </svg>
-        <input id="speed-text" type="text" name="speed" x-model="dur" />
-        <input
-          id="speed-range"
-          type="range"
-          min="2"
-          max="6"
-          step="0.2"
-          x-model="dur"
-        />
+        <button @click="dur += step">tortoise</button>
+        <button @click="(dur - step) > 0 ? dur -= step : dur = (step/2)">
+          rabbit
+        </button>
       </center>
     </div>
     <script
