@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <div class="svg-container" x-data="{ dur: '5' }">
+    <div class="svg-container" x-data="{ dur: $persist(5) }">
       <center>
         <h3>Breathe In And Out</h3>
         <svg xmlns="https://www.w3.org/2000/svg" viewbox="0 0 50 50">
@@ -39,6 +39,10 @@
         />
       </center>
     </div>
+    <script
+      src="//unpkg.com/@alpinejs/persist@3.12.0/dist/cdn.min.js"
+      defer
+    ></script>
     <script src="//unpkg.com/alpinejs" defer></script>
   </body>
 </html>
