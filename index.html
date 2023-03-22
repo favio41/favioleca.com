@@ -7,9 +7,20 @@
     <title>Relax gif</title>
     <link href="style.css" rel="stylesheet" />
   </head>
+  <script>
+    const app = {};
+    app.isNightTime = () => {
+      const now = new Date();
+      const hour = now.getHours();
+      return hour > 20 || hour < 6;
+    };
+  </script>
 
-  <body>
-    <div class="svg-container" x-data="{ dur: $persist(5), step: 0.4 }">
+  <body
+    x-data="{ dur: $persist(5), step: 0.35 }"
+    :class="app.isNightTime() ? 'dark-theme' : ''"
+  >
+    <div class="svg-container">
       <center>
         <h3>Breathe In And Out</h3>
         <svg xmlns="https://www.w3.org/2000/svg" viewbox="0 0 50 50">
