@@ -7,10 +7,7 @@
   "keywords": [],
   "author": "",
   "license": "UNLICENSED",
-  "devDependencies": {
-    "esbuild": "0.16.6"
-  },
   "workspaces": [
-    "apps/100-burpees-challenge"
+    "apps/breathe"
   ]
 }
