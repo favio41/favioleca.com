@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "cp node_modules/@picocss/pico/css/pico.pink.min.css apps/css/pico.min.css",
+    "start": "http-server apps"
+  },
   "keywords": [],
   "author": "",
   "license": "UNLICENSED",
   "workspaces": [
     "apps/breathe"
-  ]
+  ],
+  "devDependencies": {
+    "@picocss/pico": "^2.1.1",
+    "http-server": "^14.1.1"
+  }
 }
