@@ -1,0 +1,18 @@
+header.menu {
+  display: flex;
+  justify-content: space-between;
+}
+header.menu left {
+  display: flex;
+  align-items: flex-end;
+}
+header.menu left h1 {
+  font-size: calc(var(--pico-font-size) - 0.2rem);
+  margin-bottom: 0.2rem;
+}
+header.menu left logo {
+  margin-right: 10px;
+}
+header.menu left logo svg {
+  fill: var(--pico-h1-color);
+}
