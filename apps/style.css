@@ -16,3 +16,22 @@ header.menu left logo {
 header.menu left logo svg {
   fill: var(--pico-h1-color);
 }
+hero {
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-around;
+  align-items: ;
+}
+
+hero img {
+  width: 20rem;
+  border-radius: 25% 10%;
+}
+hero article {
+  padding: 4rem;
+  border-radius: 10% 25%;
+  margin-bottom: 0;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+}
