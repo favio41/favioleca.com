@@ -2,36 +2,48 @@ header.menu {
   display: flex;
   justify-content: space-between;
 }
+
 header.menu left {
   display: flex;
   align-items: flex-end;
 }
+
 header.menu left h1 {
-  font-size: calc(var(--pico-font-size) - 0.2rem);
+  font-size: calc(var(--pico-font-size) - 0.1rem);
   margin-bottom: 0.2rem;
 }
+
 header.menu left logo {
   margin-right: 10px;
+  width: 52px;
+  height: 52px;
 }
+
 header.menu left logo svg {
   fill: var(--pico-h1-color);
 }
+
 hero {
   display: flex;
-  margin-top: 3rem;
+  margin-top: 5rem;
   justify-content: space-around;
-  align-items: ;
 }
 
 hero img {
   width: 20rem;
   border-radius: 25% 10%;
 }
+
 hero article {
-  padding: 4rem;
+  padding: 2rem 4rem;
   border-radius: 10% 25%;
   margin-bottom: 0;
-  justify-content: space-around;
+  text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+}
+
+hero article a {
+  margin-bottom: 0;
 }
